@@ -5,7 +5,7 @@ import { Link } from 'expo-router'
 const index = () => {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text className="text-lg font-bold my-10">
+      <Text className="font-rubik text-3xl my-10">
         Welcome to Nativewind!
       </Text>
       <Link href="/signIn">Sign In</Link>
