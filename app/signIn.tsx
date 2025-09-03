@@ -3,13 +3,17 @@ import React from 'react'
 import images from '@/constants/images'
 import icons from '@/constants/icons'
 import { login } from './lib/appwrite'
+import { useGlobalContext } from './lib/global-provider'
 
-const signIn = () => {
+const SignIn = () => {
+
+  const { isLoggedIn, user, loading, refetch } = useGlobalContext();
+  
   const handleLogin = async () => {
     const result = await login();
 
     if (result) {
-      console.log('Login successful');
+      refetch({} as Record<string, string | number>);
     } else {
       Alert.alert('Error', 'Login failed');
     }
@@ -37,4 +41,4 @@ const signIn = () => {
   )
 }
 
-export default signIn
+export default SignIn
